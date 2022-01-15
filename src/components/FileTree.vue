@@ -63,8 +63,8 @@ export default {
       this.currentPath = path;
       this.$emit('onChangePath', this.currentPath);
     },
-    openModal(id) {
-      this.$emit('onOpenModal', id);
+    openModal(event, id) {
+      this.$emit('onOpenModal', event, id);
     },
     currentFile(type, fileName) {
       switch (type) {
@@ -125,6 +125,7 @@ export default {
   display: inline-block;
   padding: 5px 20px;
   cursor: pointer;
+  overflow: hidden;
   border-radius: 5px;
   font-weight: 600;
 
