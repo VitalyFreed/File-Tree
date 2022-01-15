@@ -1,13 +1,13 @@
 <template>
   <ul
-    v-show="isVisibleModal"
     :class="$style['modal']"
-    :style="{left: coords.x, top: coords.y}"
+    :style="getCoords"
   >
     <li
       v-for="item in items"
       :key="item.id"
       :class="$style['modal__item']"
+      @click="item.action()"
     >
       {{ item.title }}
     </li>
@@ -17,10 +17,6 @@
 <script>
 export default {
   props: {
-    isVisibleModal: {
-      type: Boolean,
-      default: false,
-    },
     items: {
       type: Array,
       default: () => ([]),
@@ -30,9 +26,13 @@ export default {
       default: () => ({x: 0, y: 0}),
     },
   },
-  created() {
-    console.log(this.coords)
-  }
+  computed: {
+    getCoords() {
+      return {
+        left: `${this.coords.x}px`, top: `${this.coords.y}px`
+      };
+    },
+  },
 }
 </script>
 

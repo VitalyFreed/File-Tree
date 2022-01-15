@@ -9,7 +9,8 @@
       />
     </ul>
     <modal
-      :isVisibleModal="isVisibleModal"
+      v-if="isVisibleModal"
+      v-click-outside="closeModal"
       :items="items"
       :coords="modalCoords"
     />
@@ -29,22 +30,11 @@ export default {
   props: {
     fileTree: Object,
     path: String,
+    items: Array,
   },
   data() {
     return {
       isVisibleModal: false,
-      items: [
-        {
-          id: 0,
-          title: 'Удалить',
-          action: (itemId) => this.deleteItem(itemId),
-        },
-        {
-          id: 1,
-          title: 'Создать',
-          action: () => this.createItem(),
-        },
-      ],
       modalCoords: {
         x: null,
         y: null,
@@ -52,14 +42,18 @@ export default {
     };
   },
   methods: {
-    openModal(event) {
-      const {x, y} = event.target.getBoundingClientRect();
-      this.modalCoords.x = x;
-      this.modalCoords.y = y;
+    openModal(event, id) {
+      const {right: x, y} = event.target.getBoundingClientRect();
+      this.modalCoords = {
+        x,
+        y,
+      };
       this.isVisibleModal = true;
+      this.$emit('onChangeCurrentModal', id);
     },
     closeModal() {
       this.isVisibleModal = false;
+      this.$emit('onChangeCurrentModal', null);
     },
     handleChangePath(path) {
       this.$emit('onChangePath', path);
