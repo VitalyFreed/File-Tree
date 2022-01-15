@@ -3,7 +3,9 @@
     <left-side
       :fileTree="fileTree"
       :path="path"
+      :items="items"
       @onChangePath="handleChangePath"
+      @onChangeCurrentModal="handleCurrentModal"
     />
     <right-side :path="path"/>
   </div>
@@ -23,16 +25,38 @@ export default {
     return {
       fileTree,
       path: fileTree.name,
+      items: [
+        {
+          id: 0,
+          title: 'Удалить',
+          action: () => this.deleteItem(this.fileTree.children),
+        },
+        {
+          id: 1,
+          title: 'Создать',
+          action: () => this.createItem(),
+        },
+      ],
+      currentModalId: null,
     };
   },
   methods: {
     handleChangePath(path) {
       this.path = path;
     },
-    deleteItem(itemId) {
+    handleCurrentModal(id) {
+      this.currentModalId = id;
     },
-    createItem() {
-    }
+    deleteItem(fileTreeChildren) {
+      return fileTreeChildren.filter((child) => {
+        if (child.children?.length > 0) {
+          child.children = this.deleteItem(child.children);
+        }
+        return child.id !== this.currentModalId;
+      });
+    },
+  },
+  createItem() {
   }
 }
 </script>
