@@ -1,0 +1,168 @@
+{
+  "id": 0,
+  "type": "directory",
+  "name": "CRM",
+  "children": [
+    {
+      "id": 1,
+      "type": "directory",
+      "name": "app",
+      "children": [
+        {
+          "id": 2,
+          "type": "directory",
+          "name": "public",
+          "children": [
+            {
+              "id": 3,
+              "type": "directory",
+              "name": "img",
+              "children": [
+                {
+                  "id": 4,
+                  "type": "file",
+                  "name": "some_img.png"
+                }
+              ]
+            },
+            {
+              "id": 5,
+              "type": "file",
+              "name": "index.html"
+            },
+            {
+              "id": 6,
+              "type": "file",
+              "name": "robots.txt"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "type": "directory",
+          "name": "src",
+          "children": [
+            {
+              "id": 8,
+              "type": "directory",
+              "name": "assets",
+              "children": [
+                {
+                  "id": 9,
+                  "type": "file",
+                  "name": "index.css"
+                }
+              ]
+            },
+            {
+              "id": 10,
+              "type": "directory",
+              "name": "store",
+              "children": [
+                {
+                  "id": 11,
+                  "type": "file",
+                  "name": "auth.js"
+                },
+                {
+                  "id": 12,
+                  "type": "file",
+                  "name": "index.js"
+                },
+                {
+                  "id": 13,
+                  "type": "file",
+                  "name": "info.js"
+                }
+              ]
+            },
+            {
+              "id": 14,
+              "type": "directory",
+              "name": "components",
+              "children": [
+                {
+                  "id": 15,
+                  "type": "file",
+                  "name": "Category.vue"
+                },
+                {
+                  "id": 16,
+                  "type": "file",
+                  "name": "Home.vue"
+                },
+                {
+                  "id": 17,
+                  "type": "file",
+                  "name": "About.vue"
+                }
+              ]
+            },
+            {
+              "id": 18,
+              "type": "file",
+              "name": "App.vue"
+            },
+            {
+              "id": 19,
+              "type": "file",
+              "name": "main.js"
+            },
+            {
+              "id": 20,
+              "type": "file",
+              "name": "main.css"
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "type": "directory",
+          "name": "templates",
+          "children": [
+            {
+              "id": 22,
+              "type": "file",
+              "name": "home.html"
+            },
+            {
+              "id": 23,
+              "type": "file",
+              "name": "profile.html"
+            },
+            {
+              "id": 24,
+              "type": "file",
+              "name": "about.html"
+            },
+            {
+              "id": 25,
+              "type": "file",
+              "name": "login.html"
+            }
+          ]
+        },
+        {
+          "id": 26,
+          "type": "file",
+          "name": ".browserslistrc"
+        },
+        {
+          "id": 27,
+          "type": "file",
+          "name": ".env"
+        },
+        {
+          "id": 28,
+          "type": "file",
+          "name": "package.json"
+        },
+        {
+          "id": 29,
+          "type": "file",
+          "name": "babel.config.js"
+        }
+      ]
+    }
+  ]
+}
